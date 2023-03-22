@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +5,7 @@ using UnityEngine;
 
 public class Initializer : Spawner //Здесь все начинается, контроль апдейта
 {
+   
     void Awake() //Закидываем ссылку на инициализатор. Аналоги метода старт
     { 
         pool.Initialize(this);
@@ -15,6 +15,8 @@ public class Initializer : Spawner //Здесь все начинается, к�
         InitController();
         ui.Initialize(this);
         carCamera.Initialize(this);
+      
+      
     }
 
     private void InitController()
@@ -22,18 +24,11 @@ public class Initializer : Spawner //Здесь все начинается, к�
         foreach (var player in carsInRace.Where(player => player.isPlayer))
             controller.Initialize(this,player);
     }
-    
-    private void FixedUpdate() //обработка ввода и физики
-    {
-        controller.WaitForInput();
-        //здесь еще будет апдейт для ии
-    }
-    
+   
     void Update() //единственный апдейт на всю игру.
     {
+        controller.WaitForInput();
         carCamera.ControlCamera();
         ui.ShowUi();
     }
-
-    
 }

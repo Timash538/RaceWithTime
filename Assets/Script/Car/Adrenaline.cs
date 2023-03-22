@@ -12,7 +12,7 @@ public class Adrenaline  // здесь мутки со временем
     
     }
 
-    public void SlowTime()
+    public void SlowTime(bool isSlowing)
     {
         
     }

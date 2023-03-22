@@ -5,31 +5,30 @@ using System;
 [Serializable]
 public class Engine
 {
-    [HideInInspector] public float speed;
+    private AudioFX _audioFX;
     public float maxSpeed;
-    public float brakeMultiplier;
+    public float speed;
     public float accelerationMultiplier;
+    public float brakeMultiplier;
     public float boostMultiplier;
-
-		Rigidbody car;
+    
+   
     public void Initialize(Initializer initializer, Vehicle car)
     {
-			this.car = car.rb;
+        _audioFX = car.AudioFX;
     }
 
-    public void Accelerate()
+    public void Accelerate(bool isAccelerating)
     {
-        Debug.Log("go");
-				
-				car.AddForce(car.transform.forward* maxSpeed, ForceMode.Impulse);
+        _audioFX.PlayEngine(isAccelerating);
     }
     
-    public void Brake()
+    public void Brake(bool isBraking)
     {
-        
+        _audioFX.PlayBrake(isBraking);
     }
 
-    public void Boost()
+    public void Boost(bool isBooting)
     {
         
     }

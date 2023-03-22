@@ -4,9 +4,8 @@ using UnityEngine;
 [Serializable]
 public class Wheels
 {
-    public float turnSpeed; //скорость поворота колес
-    public float driftAngle; // угол заноса при дрифте
-
+    public float turnMultiplier;
+    public float driftAngle;
     public void Initialize(Initializer initializer, Vehicle car)
     {
         
@@ -17,7 +16,7 @@ public class Wheels
         
     }
 
-    public void Drift()
+    public void Drift(bool isDrifting)
     {
         
     }

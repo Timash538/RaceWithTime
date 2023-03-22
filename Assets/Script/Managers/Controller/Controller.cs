@@ -19,29 +19,22 @@ public class Controller // Обработка ввода
 
     public void WaitForInput()
     {
-        if (Input.GetKey(Keys.Accelerate)) 
-            car.Engine.Accelerate();
-        
-        if(Input.GetKey(Keys.Brake))
-            car.Engine.Brake();
-        
-        if(Input.GetKey(Keys.Boost))
-            car.Engine.Boost();
+        car.Engine.Accelerate(Input.GetKey(Keys.Accelerate));
+        car.Engine.Brake(Input.GetKey(Keys.Brake));
+        car.Engine.Boost(Input.GetKey(Keys.Boost));
+        car.Wheels.Drift(Input.GetKey(Keys.Drift));
+        car.Adrenaline.SlowTime(Input.GetKey(Keys.SlowTime));
         
         if (Input.GetKey(Keys.TurnLeft) || Input.GetKey(Keys.TurnRight))
             car.Wheels.Turn(Input.GetKey(Keys.TurnLeft) ? Keys.TurnLeft : Keys.TurnRight);
-
-        if(Input.GetKey(Keys.Drift))
-            car.Wheels.Drift();
-        
-        if(Input.GetKey(Keys.SlowTime))
-            car.Adrenaline.SlowTime();
-        
-        if(Input.GetKey(Keys.CameraChange))
+       
+        if(Input.GetKeyDown(Keys.CameraChange))
             _camera.ChangeCamera();
 
-        if (Input.GetKey(Keys.ResetRace))
+        if (Input.GetKeyDown(Keys.ResetRace))
             SceneManager.LoadScene(0);
 
     }
+    
+    
 }
