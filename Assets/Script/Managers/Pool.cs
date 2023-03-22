@@ -8,9 +8,9 @@ public class Pool // Здесь хранится все, что спавнитс
     public List<Vehicle> CarsList;
     public void Initialize(Initializer initializer)
     { 
-        LoadCars();
+        //LoadCars();
     }
 
-    private void LoadCars() => CarsList.AddRange(Resources.LoadAll<Vehicle>("Prefab/Cars/"));
+    //private void LoadCars() => CarsList.AddRange(Resources.LoadAll<Vehicle>("Prefab/Cars/"));
     
 }
