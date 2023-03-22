@@ -573,9 +573,10 @@ MonoBehaviour:
       ResetRace: 282
     car: {fileID: 0}
   race:
-    RacersCount: 1
+    RacersCount: 3
   pool:
-    CarsList: []
+    CarsList:
+    - {fileID: -8655096795213634083, guid: 351b258b1cec7dc40b7af511b829e2e3, type: 3}
   carsInRace: []
 --- !u!4 &822298748
 Transform:
