@@ -23,7 +23,6 @@ public class GameStateMachine
             SwitchState(nextState);
             Debug.Log(nextState);
         }
-
     }
 
     private void SwitchState(GameState state)

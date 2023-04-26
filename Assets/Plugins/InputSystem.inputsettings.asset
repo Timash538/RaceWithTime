@@ -15,7 +15,8 @@ MonoBehaviour:
   m_SupportedDevices:
   - Keyboard
   - XInputController
-  m_UpdateMode: 2
+  - Mouse
+  m_UpdateMode: 1
   m_MaxEventBytesPerUpdate: 5242880
   m_MaxQueuedEventsPerUpdate: 1000
   m_CompensateForScreenOrientation: 1
